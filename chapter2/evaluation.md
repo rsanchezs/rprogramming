@@ -23,7 +23,7 @@ Cuando un expresión correcta es introducida en la consola, esta es evaluada y e
 
 En [1] se muestra que _x_ es un vector y que su primer elemento es _5_.
 
-Tipicamente con un trabajo interactivo, nosotros no imprimeros los objetos de forma explícita ya que es mucho más cómodo sólo escribir el nombre del objeto y presionar la tecla __Enter__. Sin embargo, cuándo escribamos scripts, funciones o programas muchos más largos, nos veremos con la necesidad de imprimir objetos y es entonce cuándo utilizaremos el modo explícito, ya que el modo ímplicito no trabaja en esas circunstáncias.
+Típicamente con un trabajo interactivo, nosotros no imprimeros los objetos de forma explícita ya que es mucho más cómodo sólo escribir el nombre del objeto y presionar la tecla __Enter__. Sin embargo, cuándo escribamos scripts, funciones o programas muchos más largos, nos veremos con la necesidad de imprimir objetos y es entonce cuándo utilizaremos el modo explícito, ya que el modo ímplicito no trabaja en esas circunstáncias.
 
 Cuándo un vector __R__ es mostrado en la consola obsérvese que el índice del vector es mostrado en []. Por ejemplo:
 
