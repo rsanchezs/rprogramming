@@ -1,0 +1,50 @@
+```{r knitsetup, echo=FALSE, results='hide', warning=FALSE, message=FALSE, cache=FALSE}
+opts_knit$set(base.dir='./', fig.path='', out.format='md')
+opts_chunk$set(prompt=TRUE, comment='', results='markup')
+# See yihui.name/knitr/options for more Knitr options.
+##### Put other setup R code here
+
+
+# end setup chunk
+```
+# Matrices
+
+Las matrices son vectores con un atributo denominado _dimension_. Este atributo que nos proporciona la dimensión de la matriz es en sí mismo un vector de tipo entero de longitud _2_ (numero de filas, numero de columnas).
+
+```{r}
+
+m <- matrix(nrow = 2, ncol = 3)
+m
+dim(m)
+attributes(m)
+
+```
+
+Las matrices se contruyen _"column-wise", esto quiere decir que lo hacen verticalmente, es decir empezando de la esquina superior izquierda y descendiendo hacia abajo por las columnas.
+
+```{r}
+m <- matrix(1:6, nrow = 2, ncol = 3)
+m
+
+```
+
+También podemos crear matrices a partir de vectores pasándole el atributo _dimension_.
+
+```{r}
+m <- 1:10
+m
+dim(m) <- c(2, 5)
+m
+
+```
+
+Las matrices pueden ser creadas rellenando los elementos por columnas ("_column-binding_") o por filas ("_row-binding_") con las funciones _cbind()_ y _rbind()_ respectivamente.
+
+```{r}
+x <- 1:3
+y <- 10:12
+cbind(x, y)
+rbind(x,y)
+
+```
+

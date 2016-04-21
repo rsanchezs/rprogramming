@@ -1,0 +1,2 @@
+
+# Búsqueda parcial

@@ -1,0 +1,32 @@
+```{r knitsetup, echo=FALSE, results='hide', warning=FALSE, message=FALSE, cache=FALSE}
+opts_knit$set(base.dir='./', fig.path='', out.format='md')
+opts_chunk$set(prompt=TRUE, comment='', results='markup')
+# See yihui.name/knitr/options for more Knitr options.
+##### Put other setup R code here
+
+
+# end setup chunk
+```
+# Coerción explícita
+
+El mecanismo de _coercion_ puede ser hecho de forma explícita con la función _as.*_ si es posible.
+
+```{r}
+x <- 0:6
+class(x)
+as.numeric(x)
+as.logical(x)
+as.character(x)
+
+```
+
+En ocasiones esto no es posible y __R__ nos devolverá un objeto __NAs__.
+
+```{r}
+x <- c("a","b", "c")
+as.numeric(x)
+as.logical(x)
+as.complex(x)
+
+```
+Cuándo esto suceda __R__ nos avisará con un mensaje de tipo _warning_.

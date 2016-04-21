@@ -1,0 +1,2 @@
+
+# Troceado de un vector
