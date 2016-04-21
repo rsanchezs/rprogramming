@@ -53,7 +53,7 @@
         data-chapter-title="Mezclando objetos"
         data-filepath="chapter2/mixingobjects.md"
         data-basepath=".."
-        data-revision="Thu Apr 21 2016 17:32:14 GMT+0200 (Hora de verano romance)"
+        data-revision="Thu Apr 21 2016 19:34:49 GMT+0200 (Hora de verano romance)"
         data-innerlanguage="">
     
 
@@ -1217,6 +1217,30 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="mezclando-objetos">Mezclando objetos</h1>
+<p>Existen ocasiones en las que nos encontramos diferentes clases de objetos <strong>R</strong> mezclados. Algunas veces esto sucede por accidente pero tambi&#xE9;n puede darse el caso de que haya sido intencionadamente. Obs&#xE9;rvese detenidamente el siguiente c&#xF3;digo:</p>
+<pre><code class="lang-r">&gt; y &lt;- c(<span class="hljs-number">1.7</span>, <span class="hljs-string">&quot;a&quot;</span>)  <span class="hljs-comment">## character</span>
+&gt; y
+</code></pre>
+<pre><code>[1] &quot;1.7&quot; &quot;a&quot;
+</code></pre><pre><code class="lang-r">&gt; class(y)
+</code></pre>
+<pre><code>[1] &quot;character&quot;
+</code></pre><pre><code class="lang-r">&gt; y &lt;- c(<span class="hljs-literal">TRUE</span>, <span class="hljs-number">2</span>)   <span class="hljs-comment">## numeric</span>
+&gt; print(y)
+</code></pre>
+<pre><code>[1] 1 2
+</code></pre><pre><code class="lang-r">&gt; class(y)
+</code></pre>
+<pre><code>[1] &quot;numeric&quot;
+</code></pre><pre><code class="lang-r">&gt; y &lt;- c(<span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-literal">TRUE</span>) <span class="hljs-comment">## Character</span>
+&gt; print(y)
+</code></pre>
+<pre><code>[1] &quot;a&quot;    &quot;TRUE&quot;
+</code></pre><pre><code class="lang-r">&gt; class(y)
+</code></pre>
+<pre><code>[1] &quot;character&quot;
+</code></pre><p>En todos los casos anteriores hemos mezclados objetos de diferentes clases en un vector. No obstante, recordemos que la &#xFA;nica regla en los vectores es que no podemos mezclas objetos de diferentes clases. Cuando esto sucede, se pone en marcha la <em>coercio</em> para que cada elemento del vector se&#xE1;n de la misma clase.</p>
+<p>En el ejemplo presentado hemos visto el efecto conocido como <em>coercion</em> impl&#xED;cita. Con este mecanismo R intenta encontrar un manera de representar todos los objetos de una forma razonable.</p>
 
                     
                     </section>

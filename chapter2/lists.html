@@ -53,7 +53,7 @@
         data-chapter-title="Listas"
         data-filepath="chapter2/lists.md"
         data-basepath=".."
-        data-revision="Thu Apr 21 2016 17:32:14 GMT+0200 (Hora de verano romance)"
+        data-revision="Thu Apr 21 2016 19:34:49 GMT+0200 (Hora de verano romance)"
         data-innerlanguage="">
     
 
@@ -1217,7 +1217,41 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="listas">Listas</h1>
+<p>Las listas son un tipo especial de vector que pueden contener objetos de diferentes clases. Las listas son una estructura de datos muy importante y ampliamente utilizada, es por eso que tendr&#xED;amos que estudiarlas y conocerlas profundamente. Las listas junto con un conjunto de funciones que trataremos m&#xE1;s adelante constituyen una herramienta poderosa para el desarrollo de nuestro trabajo.</p>
+<p>Las listas pueden ser creadas expl&#xED;citamente con la funci&#xF3;n <em>list()</em>, la cual puede tomar un n&#xFA;mero arbitrario de argumentos.</p>
+<pre><code class="lang-r">&gt; x &lt;- list(<span class="hljs-number">1</span>, <span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-literal">TRUE</span>, <span class="hljs-number">1</span> + <span class="hljs-number">4i</span>)
+&gt; x
+</code></pre>
+<pre><code>[[1]]
+[1] 1
 
+[[2]]
+[1] &quot;a&quot;
+
+[[3]]
+[1] TRUE
+
+[[4]]
+[1] 1+4i
+</code></pre><p>Tambi&#xE9;n podemos crear una lista vac&#xED;a con una longitud preestablecida mediante la funci&#xF3;n <em>vector()</em>.</p>
+<pre><code class="lang-r">&gt; x &lt;- vector(<span class="hljs-string">&quot;list&quot;</span>, length = <span class="hljs-number">5</span>)
+&gt; x
+</code></pre>
+<pre><code>[[1]]
+NULL
+
+[[2]]
+NULL
+
+[[3]]
+NULL
+
+[[4]]
+NULL
+
+[[5]]
+NULL
+</code></pre>
                     
                     </section>
                 

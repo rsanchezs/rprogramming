@@ -53,7 +53,7 @@
         data-chapter-title="Matrices"
         data-filepath="chapter2/matrices.md"
         data-basepath=".."
-        data-revision="Thu Apr 21 2016 17:32:14 GMT+0200 (Hora de verano romance)"
+        data-revision="Thu Apr 21 2016 19:34:49 GMT+0200 (Hora de verano romance)"
         data-innerlanguage="">
     
 
@@ -1217,7 +1217,53 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="matrices">Matrices</h1>
-
+<p>Las matrices son vectores con un atributo denominado <em>dimension</em>. Este atributo que nos proporciona la dimensi&#xF3;n de la matriz es en s&#xED; mismo un vector de tipo entero de longitud <em>2</em> (numero de filas, numero de columnas).</p>
+<pre><code class="lang-r">&gt; m &lt;- matrix(nrow = <span class="hljs-number">2</span>, ncol = <span class="hljs-number">3</span>)
+&gt; m
+</code></pre>
+<pre><code>     [,1] [,2] [,3]
+[1,]   NA   NA   NA
+[2,]   NA   NA   NA
+</code></pre><pre><code class="lang-r">&gt; dim(m)
+</code></pre>
+<pre><code>[1] 2 3
+</code></pre><pre><code class="lang-r">&gt; attributes(m)
+</code></pre>
+<pre><code>$dim
+[1] 2 3
+</code></pre><p>Las matrices se contruyen _&quot;column-wise&quot;, esto quiere decir que lo hacen verticalmente, es decir empezando de la esquina superior izquierda y descendiendo hacia abajo por las columnas.</p>
+<pre><code class="lang-r">&gt; m &lt;- matrix(<span class="hljs-number">1</span>:<span class="hljs-number">6</span>, nrow = <span class="hljs-number">2</span>, ncol = <span class="hljs-number">3</span>)
+&gt; m
+</code></pre>
+<pre><code>     [,1] [,2] [,3]
+[1,]    1    3    5
+[2,]    2    4    6
+</code></pre><p>Tambi&#xE9;n podemos crear matrices a partir de vectores pas&#xE1;ndole el atributo <em>dimension</em>.</p>
+<pre><code class="lang-r">&gt; m &lt;- <span class="hljs-number">1</span>:<span class="hljs-number">10</span>
+&gt; m
+</code></pre>
+<pre><code> [1]  1  2  3  4  5  6  7  8  9 10
+</code></pre><pre><code class="lang-r">&gt; dim(m) &lt;- c(<span class="hljs-number">2</span>, <span class="hljs-number">5</span>)
+&gt; m
+</code></pre>
+<pre><code>     [,1] [,2] [,3] [,4] [,5]
+[1,]    1    3    5    7    9
+[2,]    2    4    6    8   10
+</code></pre><p>Las matrices pueden ser creadas rellenando los elementos por columnas (&quot;<em>column-binding</em>&quot;) o por filas (&quot;<em>row-binding</em>&quot;) con las funciones <em>cbind()</em> y <em>rbind()</em> respectivamente.</p>
+<pre><code class="lang-r">&gt; x &lt;- <span class="hljs-number">1</span>:<span class="hljs-number">3</span>
+&gt; y &lt;- <span class="hljs-number">10</span>:<span class="hljs-number">12</span>
+&gt; cbind(x, y)
+</code></pre>
+<pre><code>     x  y
+[1,] 1 10
+[2,] 2 11
+[3,] 3 12
+</code></pre><pre><code class="lang-r">&gt; rbind(x,y)
+</code></pre>
+<pre><code>  [,1] [,2] [,3]
+x    1    2    3
+y   10   11   12
+</code></pre>
                     
                     </section>
                 

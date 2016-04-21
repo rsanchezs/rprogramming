@@ -53,7 +53,7 @@
         data-chapter-title="Valores indefinidos"
         data-filepath="chapter2/missingvalues.md"
         data-basepath=".."
-        data-revision="Thu Apr 21 2016 17:32:14 GMT+0200 (Hora de verano romance)"
+        data-revision="Thu Apr 21 2016 19:34:49 GMT+0200 (Hora de verano romance)"
         data-innerlanguage="">
     
 
@@ -1217,7 +1217,34 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="valores-indefinidos">Valores indefinidos</h1>
-
+<p>Los valores indefinidos son indicados en <strong>R</strong> por <em>NA</em> o <em>NaN</em> para cualquier operaci&#xF3;n indefinida matematicamente.</p>
+<ul>
+<li><em>is.na()</em> se utiliza para comprobar si los objetos son <em>NA</em></li>
+<li><em>is.nan()</em> se utiliza para comprobar si los objetos son <em>NaN</em></li>
+<li><em>NA</em> pertenecen a una clase, por lo tanto nos podemos encontrar con integer <em>NA</em>, character <em>NA</em>, etc.</li>
+<li>Un valor <em>NaN</em> es tambi&#xE9;n un <em>NA</em> pero lo contrario es falso.</li>
+</ul>
+<pre><code class="lang-r">&gt; <span class="hljs-comment">## Crea un vector con valore Na</span>
+&gt; x &lt;- c(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-literal">NA</span>, <span class="hljs-number">10</span>, <span class="hljs-number">3</span>)
+&gt; <span class="hljs-comment">##Devuelve un vector l&#xF3;gico indicando que elementos son NA</span>
+&gt; is.na(x)
+</code></pre>
+<pre><code>[1] FALSE FALSE  TRUE FALSE FALSE
+</code></pre><pre><code class="lang-r">&gt; <span class="hljs-comment">##Devuelve un vector l&#xF3;gico indicando que elemetos son NaN</span>
+&gt; is.nan(x)
+</code></pre>
+<pre><code>[1] FALSE FALSE FALSE FALSE FALSE
+</code></pre><pre><code class="lang-r">&gt; <span class="hljs-comment">## Crea un vector con valores Na y NaN</span>
+&gt; x &lt;- c(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-literal">NA</span>, <span class="hljs-literal">NaN</span>, <span class="hljs-number">3</span>)
+&gt; <span class="hljs-comment">##Devuelve un vector l&#xF3;gico indicando que elementos son NA</span>
+&gt; is.na(x)
+</code></pre>
+<pre><code>[1] FALSE FALSE  TRUE  TRUE FALSE
+</code></pre><pre><code class="lang-r">&gt; <span class="hljs-comment">##Devuelve un vector l&#xF3;gico indicando que elemetos son NaN</span>
+&gt; is.nan(x)
+</code></pre>
+<pre><code>[1] FALSE FALSE FALSE  TRUE FALSE
+</code></pre>
                     
                     </section>
                 

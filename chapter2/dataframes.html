@@ -53,7 +53,7 @@
         data-chapter-title="Data frames"
         data-filepath="chapter2/dataframes.md"
         data-basepath=".."
-        data-revision="Thu Apr 21 2016 17:32:14 GMT+0200 (Hora de verano romance)"
+        data-revision="Thu Apr 21 2016 19:34:49 GMT+0200 (Hora de verano romance)"
         data-innerlanguage="">
     
 
@@ -1217,7 +1217,27 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="data-frames">Data frames</h1>
-
+<p>Los <em>data frames</em> son utilizados en <strong>R</strong> para almacenar datos de tipo tabla. Es un tipo de objeto muy importante en <strong>R</strong> y utilizados ampliamente en modelado estad&#xED;stico. El paquete <em>dplyr</em> de Hadley Wickham posee un conjunto optimizado de funciones dise&#xF1;adas para trabajar eficientemente con data frames.</p>
+<p>Los data frames son representados como un tipo especial de lista donde cada elemento de la lista tiene que tener la misma longitud. Podemos considerar cada elemento de la lista como una columna y la longitud de cada elemento de la lista como el n&#xFA;mero de filas.</p>
+<p>A diferencia de las matrices, los data frames pueden almacenar diferentes clases de objetos en cada columna. Recordemos que los matrices deb&#xED;an tener cada elemento de la misma clase (e.g. todos enteros o todos numericos).</p>
+<p>Adem&#xE1;s del nombre de las columnas, que nos indica el nombre de las variables, los data frames tienen un atributo especial denominado <em>row.names</em> que nos indica la informaci&#xF3;n de cada fila en el data frame.</p>
+<p>Los data frames normalmente son creados leyendo desde un conjunto de datos con las funcions <em>read.table()</em> o <em>read.csv()</em>. Sin embargo, data frames pueden ser creados expl&#xED;citamente con la funci&#xF3;n <em>data.frame()</em> o pueden ser <em>&quot;coerced&quot;</em> desde otro tipo de objetos como las listas.</p>
+<p>Los data frames pueden ser convertidos a matrices con la funci&#xF3;n <em>data.matrix()</em>. </p>
+<pre><code class="lang-r">&gt; x &lt;- data.frame(foo = <span class="hljs-number">1</span>:<span class="hljs-number">4</span> , bar = c(<span class="hljs-literal">T</span>,<span class="hljs-literal">T</span>,<span class="hljs-literal">F</span>,<span class="hljs-literal">F</span>))
+&gt; x
+</code></pre>
+<pre><code>  foo   bar
+1   1  TRUE
+2   2  TRUE
+3   3 FALSE
+4   4 FALSE
+</code></pre><pre><code class="lang-r">&gt; nrow(x)
+</code></pre>
+<pre><code>[1] 4
+</code></pre><pre><code class="lang-r">&gt; ncol(x)
+</code></pre>
+<pre><code>[1] 2
+</code></pre>
                     
                     </section>
                 

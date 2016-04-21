@@ -53,7 +53,7 @@
         data-chapter-title="Factores"
         data-filepath="chapter2/factors.md"
         data-basepath=".."
-        data-revision="Thu Apr 21 2016 17:32:14 GMT+0200 (Hora de verano romance)"
+        data-revision="Thu Apr 21 2016 19:34:49 GMT+0200 (Hora de verano romance)"
         data-innerlanguage="">
     
 
@@ -1217,7 +1217,40 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="factores">Factores</h1>
-
+<p>Los factores son utilizados para representar categor&#xED;as y pueden estar ordenadas o desordenadas. Podemos pensar en los factores como un vector de enteros en el que cada entero representa una etiqueta. Los factores son importantes en modelos estad&#xED;sticos y se utilizan especialmente para modelar junto a funciones como <em>lm()</em> y <em>glm()</em>.</p>
+<p>El uso de factores con et&#xED;quetas es mejor que con enteros puesto que los factores s&#xF3;n auto-descriptivos. Por ejemplo, si trabajamos con una variable que tiene los valores &quot;Hombre&quot; y &quot;Mujer&quot; es mejor que si lo hacemos con los valores <em>1</em> y <em>2</em>.</p>
+<p>Los objetos factor pueden ser creados con la funci&#xF3;n <em>factor()</em>.</p>
+<pre><code class="lang-r">&gt; x &lt;- factor(c(<span class="hljs-string">&quot;yes&quot;</span>, <span class="hljs-string">&quot;yes&quot;</span>, <span class="hljs-string">&quot;no&quot;</span>, <span class="hljs-string">&quot;yes&quot;</span>, <span class="hljs-string">&quot;no&quot;</span>))
+&gt; x
+</code></pre>
+<pre><code>[1] yes yes no  yes no 
+Levels: no yes
+</code></pre><pre><code class="lang-r">&gt; table(x)
+</code></pre>
+<pre><code>x
+ no yes 
+  2   3
+</code></pre><pre><code class="lang-r">&gt; unclass(x)  <span class="hljs-comment">##vemos la representaci&#xF3;n interna del vector</span>
+</code></pre>
+<pre><code>[1] 2 2 1 2 1
+attr(,&quot;levels&quot;)
+[1] &quot;no&quot;  &quot;yes&quot;
+</code></pre><pre><code class="lang-r">&gt; attr(x,<span class="hljs-string">&quot;levels&quot;</span>)
+</code></pre>
+<pre><code>[1] &quot;no&quot;  &quot;yes&quot;
+</code></pre><p>A menudo los factores ser&#xE1;n creados por nosotros cuando importemos un conjunto de datos con funciones como <em>read.table()</em>. Este tipo de funciones crean factores por defecto cuando encuentran datos de tipo car&#xE1;cter o cadenas de car&#xE1;cteres (&quot;<em>strings</em>&quot;).</p>
+<p>El orden de los niveles de un factor puede ser establecido utilizando el argumento <em>levels</em> de la funci&#xF3;n <em>factor()</em>. Esto puede ser importan en modelos liniales puesto que el primer nivel es utilizado como nivel base.</p>
+<pre><code class="lang-r">&gt; x &lt;- factor(c(<span class="hljs-string">&quot;hombre&quot;</span>, <span class="hljs-string">&quot;hombre&quot;</span>, <span class="hljs-string">&quot;mujer&quot;</span>, <span class="hljs-string">&quot;hombre&quot;</span>, <span class="hljs-string">&quot;mujer&quot;</span>))
+&gt; x   <span class="hljs-comment">## los niveles son establecidos de forma alfab&#xE9;tica</span>
+</code></pre>
+<pre><code>[1] hombre hombre mujer  hombre mujer 
+Levels: hombre mujer
+</code></pre><pre><code class="lang-r">&gt; x &lt;- factor(c(<span class="hljs-string">&quot;hombre&quot;</span>, <span class="hljs-string">&quot;hombre&quot;</span>, <span class="hljs-string">&quot;mujer&quot;</span>, <span class="hljs-string">&quot;hombre&quot;</span>, <span class="hljs-string">&quot;mujer&quot;</span>),levels = c(<span class="hljs-string">&quot;mujer&quot;</span>, <span class="hljs-string">&quot;hombre&quot;</span>))
+&gt; x
+</code></pre>
+<pre><code>[1] hombre hombre mujer  hombre mujer 
+Levels: mujer hombre
+</code></pre>
                     
                     </section>
                 

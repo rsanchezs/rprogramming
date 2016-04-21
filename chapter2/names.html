@@ -53,7 +53,7 @@
         data-chapter-title="Nombres"
         data-filepath="chapter2/names.md"
         data-basepath=".."
-        data-revision="Thu Apr 21 2016 17:32:14 GMT+0200 (Hora de verano romance)"
+        data-revision="Thu Apr 21 2016 19:34:49 GMT+0200 (Hora de verano romance)"
         data-innerlanguage="">
     
 
@@ -1217,7 +1217,20 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="nombres">Nombres</h1>
-
+<p>Los objetos en <strong>R</strong> pueden tener nombres, lo que es &#xFA;til para la escritura de c&#xF3;digo legible y objetos auto-descriptivos. A continuaci&#xF3;n se muestra un ejemplo de asignaci&#xF3;n de nombres a un vector de enteros.</p>
+<pre><code class="lang-r">&gt; x &lt;- <span class="hljs-number">1</span>:<span class="hljs-number">3</span>
+&gt; names(x)
+</code></pre>
+<pre><code>NULL
+</code></pre><pre><code class="lang-r">&gt; names(x) &lt;- c(<span class="hljs-string">&quot;Espa&#xF1;a&quot;</span>, <span class="hljs-string">&quot;Honduras&quot;</span>, <span class="hljs-string">&quot;El Salvador&quot;</span>)
+&gt; x
+</code></pre>
+<pre><code>    Espa&#xF1;a    Honduras El Salvador 
+          1           2           3
+</code></pre><pre><code class="lang-r">&gt; names(x)
+</code></pre>
+<pre><code>[1] &quot;Espa&#xF1;a&quot;     &quot;Honduras&quot;    &quot;El Salvador&quot;
+</code></pre>
                     
                     </section>
                 
