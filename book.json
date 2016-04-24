@@ -4,7 +4,8 @@
         "-blog",
         "-book-summary-scroll-position-saver",
         "-blog-r24y",
-        "-code_tomorrow_scheme"
+        "-code_tomorrow_scheme",
+        "collapsible-menu"
     ],
     "pluginsConfig": {}
 }
