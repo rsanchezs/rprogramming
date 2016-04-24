@@ -1,6 +1,7 @@
 {
     "plugins": [
-        "-bigdata"
+        "-bigdata",
+        "blog"
     ],
     "pluginsConfig": {}
 }
