@@ -6,7 +6,7 @@
         "-blog-r24y",
         "-code_tomorrow_scheme",
         "-collapsible-menu",
-        "copy-code-button"
+        "-copy-code-button"
     ],
     "pluginsConfig": {}
 }
