@@ -8,7 +8,8 @@
         "-collapsible-menu",
         "-copy-code-button",
         "-customheader",
-        "-expandable-chapters"
+        "-expandable-chapters",
+        "fontsettings"
     ],
     "pluginsConfig": {}
 }
