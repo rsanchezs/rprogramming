@@ -12,7 +12,8 @@
         "fontsettings",
         "footer",
         "-github",
-        "gitbook-footer"
+        "-gitbook-footer",
+        "page-footer"
     ],
     "pluginsConfig": {}
 }
