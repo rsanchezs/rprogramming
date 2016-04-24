@@ -9,9 +9,9 @@
         "-copy-code-button",
         "-customheader",
         "-expandable-chapters",
-        "-fontsettings",
-        "-footer",
-        "github"
+        "fontsettings",
+        "footer",
+        "-github"
     ],
     "pluginsConfig": {}
 }
