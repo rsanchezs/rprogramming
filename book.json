@@ -1,7 +1,7 @@
 {
     "plugins": [
         "-bigdata",
-        "blog",
+        "-blog",
         "-book-summary-scroll-position-saver",
         "-blog-r24y"
     ],
