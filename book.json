@@ -11,7 +11,8 @@
         "-expandable-chapters",
         "fontsettings",
         "footer",
-        "-github"
+        "-github",
+        "gitbook-footer"
     ],
     "pluginsConfig": {}
 }
