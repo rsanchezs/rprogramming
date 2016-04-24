@@ -7,7 +7,7 @@
         "-code_tomorrow_scheme",
         "-collapsible-menu",
         "-copy-code-button",
-        "customheader"
+        "-customheader"
     ],
     "pluginsConfig": {}
 }
