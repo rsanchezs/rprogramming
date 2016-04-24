@@ -1,6 +1,7 @@
 {
     "plugins": [
-        "addcssjs"
+        "addcssjs",
+        "add-header"
     ],
     "pluginsConfig": {}
 }
