@@ -14,7 +14,7 @@
         "-github",
         "-gitbook-footer",
         "-page-footer",
-        "toggle-chapters"
+        "-toggle-chapters"
     ],
     "pluginsConfig": {}
 }
