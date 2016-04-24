@@ -13,7 +13,8 @@
         "footer",
         "-github",
         "-gitbook-footer",
-        "-page-footer"
+        "-page-footer",
+        "toggle-chapters"
     ],
     "pluginsConfig": {}
 }
