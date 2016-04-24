@@ -9,7 +9,7 @@
         "-copy-code-button",
         "-customheader",
         "-expandable-chapters",
-        "fontsettings",
+        "-fontsettings",
         "-footer"
     ],
     "pluginsConfig": {}
