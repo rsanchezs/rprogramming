@@ -1,0 +1,20 @@
+{
+    "plugins": [
+        "-bigdata",
+        "-blog",
+        "-book-summary-scroll-position-saver",
+        "-blog-r24y",
+        "-code_tomorrow_scheme",
+        "-collapsible-menu",
+        "-copy-code-button",
+        "-customheader",
+        "-expandable-chapters",
+        "fontsettings",
+        "footer",
+        "-github",
+        "-gitbook-footer",
+        "-page-footer",
+        "-toggle-chapters"
+    ],
+    "pluginsConfig": {}
+}
