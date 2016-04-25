@@ -14,7 +14,8 @@
         "-github",
         "-gitbook-footer",
         "-page-footer",
-        "-toggle-chapters"
+        "-toggle-chapters",
+        "mathjax4us"
     ],
     "pluginsConfig": {}
 }
