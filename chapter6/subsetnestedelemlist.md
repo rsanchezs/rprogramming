@@ -1,2 +1,2 @@
 
-# Troceado de elementos anidados de una lista
+# Selección de elementos anidados de una lista

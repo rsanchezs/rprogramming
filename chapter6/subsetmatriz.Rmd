@@ -7,4 +7,27 @@ opts_chunk$set(prompt=TRUE, comment='', results='markup')
 
 # end setup chunk
 ```
-# Troceado de una matriz
+# Selección de elementos en una matriz
+
+Para la selección de elementos en una matriz podemos utilizar la nomenclatura $(i,j)$.
+
+```{r}
+x <- matrix(1:6, 2, 3)
+x
+x[1, 2]
+x[2, 1]
+
+```
+
+Podemos acceder a filas o columnas del siguiente modo.
+
+```{r}
+## Selecciona la primera fila
+x[1,]
+## Selecciona la segunda columna
+x[, 2]
+
+```
+
+
+

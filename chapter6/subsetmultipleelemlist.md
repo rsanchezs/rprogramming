@@ -1,2 +1,2 @@
 
-# Troceado de elemtos multiples de una lista
+# Selección de multiples elementos en una lista
