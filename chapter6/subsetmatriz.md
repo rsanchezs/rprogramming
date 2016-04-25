@@ -1,7 +1,7 @@
 
 # Selección de elementos en una matriz
 
-Para la selección de elementos en una matriz podemos utilizar la nomenclatura {% math %}(i, j){% endmath %}
+Para la selección de elementos en una matriz podemos utilizar la nomenclatura $$(i, j)$$
 
 
 ```r
