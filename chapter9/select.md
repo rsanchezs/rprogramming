@@ -17,7 +17,7 @@ install.packages("nycflights13")
 ## package 'nycflights13' successfully unpacked and MD5 sums checked
 ## 
 ## The downloaded binary packages are in
-## 	C:\Users\Drube\AppData\Local\Temp\RtmpcrTRed\downloaded_packages
+## 	C:\Users\Drube\AppData\Local\Temp\RtmpSG29mi\downloaded_packages
 ```
 
 Para importar el conjunto de datos del paquete __nycflights13__ en __R__:
