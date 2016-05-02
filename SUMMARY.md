@@ -1,6 +1,7 @@
 # Summary
-<<<<<<< HEAD
+
 This is the summary of my book.
+* [Prefacio](README.md)
 * [Introducción a R](chapter1/README.md)
     * [Instalación](chapter1/install.md)
     * [Introducción a la interface de R](chapter1/rinterface.md)
@@ -62,9 +63,6 @@ This is the summary of my book.
     * [Iteraciones con while](chapter10/whileloop.md)
     * [repeat](chapter10/repeat.md)
     * [next, break](chapter10/nextbreak.md)
-=======
-
-* [Prefacio](README.md)
 * [Introducción a R](chapter1/README.md)
    * [Instalación](chapter1/install.md)
    * [Introducción a la interface de R](chapter1/rinterface.md)

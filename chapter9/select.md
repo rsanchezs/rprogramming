@@ -14,7 +14,10 @@ install.packages("nycflights13")
 ```
 
 ```
-## Warning: package 'nycflights13' is in use and will not be installed
+## package 'nycflights13' successfully unpacked and MD5 sums checked
+## 
+## The downloaded binary packages are in
+## 	C:\Users\Drube\AppData\Local\Temp\RtmpcrTRed\downloaded_packages
 ```
 
 Para importar el conjunto de datos del paquete __nycflights13__ en __R__:
@@ -22,6 +25,20 @@ Para importar el conjunto de datos del paquete __nycflights13__ en __R__:
 
 ```r
 library(nycflights13) ##Cargamos la libreria
+```
+
+```
+## 
+## Attaching package: 'nycflights13'
+```
+
+```
+## The following objects are masked _by_ '.GlobalEnv':
+## 
+##     airlines, weather
+```
+
+```r
 data(package = "nycflights13") ##Importamos los datos en R
 ```
 
