@@ -4,10 +4,6 @@
 Para los ejemplos en este capítulo utilizaremos un conjunto de datos relacionados con los vuelos en el año 2013 en la ciudad de Chicago.
 
 
-```r
-install.packages("nycflights13")
-```
-
 ```
 ## Installing package into 'C:/Users/Drube/Documents/R/win-library/3.2'
 ## (as 'lib' is unspecified)
@@ -17,7 +13,7 @@ install.packages("nycflights13")
 ## package 'nycflights13' successfully unpacked and MD5 sums checked
 ## 
 ## The downloaded binary packages are in
-## 	C:\Users\Drube\AppData\Local\Temp\RtmpSG29mi\downloaded_packages
+## 	C:\Users\Drube\AppData\Local\Temp\RtmpiIDeHi\downloaded_packages
 ```
 
 Para importar el conjunto de datos del paquete __nycflights13__ en __R__:

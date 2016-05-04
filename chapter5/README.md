@@ -1,5 +1,9 @@
 # Interfaces con el Mundo Exterior
 
+Ver el video de esta sección:
+
+{%youtube%}Pb01WoJRUtY{%endyoutube%}
+
 Los datos son leídos por medio de las interfaces _connection_. Las conexiones pueden ser archivos (la más común) o otro tipo de conexiones más "exóticas".
 
 + _file_, abre una conexión para un archivo

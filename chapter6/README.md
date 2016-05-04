@@ -1,5 +1,9 @@
 # Selección de objetos
 
+Ver el video de esta sección:
+
+{%youtube%}VfZUZGUgHqg{%endyoutube%}
+
 Existen tres operadores que pueden ser utilizados para extraer subconjuntos de elementos en objetos __R__.
 
 + El operador __[__ siempre devuelve un objeto de la misma clase al original. Puede ser utilizado para seleccionar múltiples elementos en un objeto.

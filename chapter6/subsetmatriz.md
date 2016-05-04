@@ -1,6 +1,10 @@
 
 # Selección de elementos en una matriz
 
+Ver video de esta sección:
+
+{%youtube%}FzjXesh9tRw{%endyoutube%}
+
 Para la selección de elementos en una matriz podemos utilizar la nomenclatura $$(i,j)$$.
 
 

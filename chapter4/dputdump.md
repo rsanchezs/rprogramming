@@ -1,6 +1,10 @@
 
 # Uso de dput() y dump()
 
+Ver el video de esta sección:
+
+{%youtube%}5mIPigbNDfk{%endyoutube%}
+
 A continuación mostrarnos un ejemplo del uso de la función _dput()_ y _dget()_:
 
 

@@ -1,6 +1,11 @@
 
 # Leyendo grandes conjuntos de datos
 
+Ver el video de esta sección:
+
+{%youtube%}BJYYIJO3UFI{%endyoutube%}
+
+
 Cuándo trabajemos con grandes volúmenes de datos, podemos hacer una serie de cosas que harán nuestra vida más fácil y prevendrán que __R__ se ahogue.
 
 + Leer la página de ayuda de la función _read.table_, la cual contiene muchas pistas.
