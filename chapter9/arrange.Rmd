@@ -29,7 +29,7 @@ storms
 Para ordenar las filas por la variable __wind__ de forma ascendente podemos hacer lo siguiente:  
 
 ```{r}
-arrange(storms, wind
+arrange(storms, wind)
 
 ```
 

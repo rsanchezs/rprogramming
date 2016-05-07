@@ -57,10 +57,11 @@ A continuación se muestran funciones que trabajando conjuntamente con la funci�
 | var, sd()  | varianza y desviación típica |  
 
 
----
+
   
 
 |      | dplyr |
+| :---: | :---: |
 | first() | primer valor en un vector |
 | last() | el último valor en un vector |
 | n() | el número de valores en un vector |
