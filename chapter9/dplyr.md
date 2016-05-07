@@ -49,12 +49,11 @@ Después de la instalación es importante que lo carguemos en nuestra sesión __
 library(dplyr)
 ```
 
-```
-## Error in library(dplyr): there is no package called 'dplyr'
-```
-
 
 Es posible que cuando carguemos el paquete nos aparezcan una serie de _warnings_, esto es debido que el paquete tiene funciones con el mismo nombre que en otros paquetes. Por el momento haremos caso omiso  a estos avisos.
+
+Recomiendamos consultar la documentación de las funciones:
+
 
 
 

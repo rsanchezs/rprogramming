@@ -1,80 +1,108 @@
 
 # select()
 
-Para los ejemplos en este capítulo utilizaremos un conjunto de datos relacionados con los vuelos en el año 2013 en la ciudad de Chicago.
+Lo primero sera instalar el paquete con el conjunto de datos que utilizaremos para los ejemplos:
 
-```{r eval=FALSE}
+```{r eval=FALSE, echo=FALSE}
 install.packages("devtools")
 devtools::install_github("rstudio/EDAWR")
 
 ```
 
-Para importar el conjunto de datos del paquete __nycflights13__ en __R__:
+Tendremos que cargar la libreria para poder utilizarla:
 
-```{r}
-library(nycflights13) ##Cargamos la libreria
-data(package = "nycflights13") ##Importamos los datos en R
-
-```
-
-Si queremos trabajar con un conjunto de datos del paquete tendremos que cargarlo en el entorno __R__. Por ejemplo, si queremos trabajar con el data frame __planes__:
-
-```{r}
-data("planes")
-
-```
-A continuación podemos realizar un examen preliminar del data frame:
-
-```{r}
-str(planes) ##Muestra la estrutura del data frame
-dim(planes) ## n x m
-names(planes) ##nombre de las variables
-?planes ##documentación del data frame
+```{r echo=FALSE}
+library(EDAWR)
 
 ```
 
-La función ___select()___ sirve para seleccionar una o varias columnas del data frame.
+Podemos echar un vistazo al conjunto de datos mediante __?__ or el comando __Viem()__:
+
+```{r echo=FALSE, eval=FALSE}
+?storms
+?cases
+?pollution
+?tb
+View(storms)
+View(cases)
+View(pollution)
+View(tb)
+```
+
+Con la función select podemos seleccionar columnas de un data frame:
 
 ```{r}
-select(planes, tailnum, year,type)
+storms
+select(storms, storm, pressure)
 
+```
+
+Con el guión __-__ podemos excluir una columna:
+
+```{r}
+storms
+select(storms, -storm)
 
 ```
 
 Podemos utilizar la notación __:__ para seleccionar un rango de columnas:
 
 ```{r}
-select(planes, tailnum:type)
+storms
+select(storms, wind:date)
 
 ```
-Podemos excluir una o varias columnas en nuestra selección del siguiente modo:
+
+Utilizando el operador __-__ y __:__ podemos hacer cosas como estas:
 
 ```{r}
-select(planes, -tailnum)
-select(planes, -(tailnum:type))
+storms
+select(storms, -(storm:wind))
 
 ```
 
-La función __select()__ nos permite seleccionar un conjunto de columnas/variables según un patrón con la siguiente sintaxis:
+El paquete dplyr proporciona una serie de funciones que nos pueden facilitar mucho nuestro trabajo, como por ejemplo:
 
 ```{r}
-select(planes, starts_with("m"))
-select(planes, ends_with("e"))
+storms
+#Selecciona columnas cuyo nombre contiene un string
+select(storms,starts_with("w"))
+```
+
+```{r}
+#Selecciona columnas cuyo nombre termina con un string
+
+select(storms, ends_with("e"))
+```
+
+```{r}
+#Selecciona todas las columnas
+
+select(storms, everything())
+```
+
+```{r}
+#Selecciona columnas cuyo nombres contienen un string
+select(storms, contains("essure"))
 
 ```
 
-A continuación mostramos un conjunto de funciones para __select__ que nos serán muy útiles:
 
 
-+ __-__ : Selecciona todas las variables excepto
-+ __:__ : Selecciona un rango
-+ __contains()__ : Selecciona variables cuyo nombre contiene la cadena de texto
-+ __ends_with()__: Selecciona variables cuyo nombre termina con la cadena de caracteres
-+ __everything()__ : Selecciona todas las columnas
-+ __matches()__: Selecciona las variables cuyos nombres coinciden con una expresión regular
-+ __num_range()__: Selecciona las variables por posición
-+ __one_of()__: Selecciona variables cuyos nombres están en un grupo de nombres
-+ __start_with()__: Selecciona variables cuyos nombres empiezan con la cadena de caracteres.
+A continuación mostramos un resumen de las funciones para __select__ que nos serán muy útiles:
+
+
+|        | *A partir de la fila son funciones propias del paquete dply |
+| :---: | :---: |
+| __-__ | Selecciona todas las variables excepto|
+| __:__ | Selecciona un rango |
+| __contains()__ | Selecciona variables cuyo nombre contiene la cadena de texto |
+| __ends_with()__ | Selecciona variables cuyo nombre termina con la cadena de caracteres |
+| __everything()__ | Selecciona todas las columnas |
+| __matches()__ | Selecciona las variables cuyos nombres coinciden con una expresión regular |
+| __num_range()__ | Selecciona las variables por posición |
+| __one_of()__ | Selecciona variables cuyos nombres están en un grupo de nombres |
+| __start_with()__ | Selecciona variables cuyos nombres empiezan con la cadena de caracteres |
 
 
 

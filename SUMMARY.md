@@ -51,6 +51,7 @@ This is the summary of my book.
     * [El paquete dplyr](chapter9/dplyr.md)
     * [select()](chapter9/select.md)
     * [filter()](chapter9/filter.md)
+    * [summarise()](chapter9/summarise.md)
     * [arrange()](chapter9/arrange.md)
     * [rename()](chapter9/rename.md)
     * [mutate()](chapter9/mutate.md)

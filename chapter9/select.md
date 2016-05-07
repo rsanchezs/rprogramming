@@ -1,238 +1,279 @@
 
 # select()
 
-Para los ejemplos en este capítulo utilizaremos un conjunto de datos relacionados con los vuelos en el año 2013 en la ciudad de Chicago.
+Lo primero sera instalar el paquete con el conjunto de datos que utilizaremos para los ejemplos:
 
 
-```
-## Installing package into 'C:/Users/Ruben/Documents/R/win-library/3.3'
-## (as 'lib' is unspecified)
+
+Tendremos que cargar la libreria para poder utilizarla:
+
+
+
+Podemos echar un vistazo al conjunto de datos mediante __?__ or el comando __Viem()__:
+
+
+
+Con la función select podemos seleccionar columnas de un data frame:
+
+
+```r
+storms
 ```
 
 ```
-## package 'devtools' successfully unpacked and MD5 sums checked
-```
-
-```
-## Warning: cannot remove prior installation of package 'devtools'
-```
-
-```
+## Source: local data frame [6 x 4]
 ## 
-## The downloaded binary packages are in
-## 	C:\Users\Ruben\AppData\Local\Temp\RtmpOAIc5F\downloaded_packages
+##     storm  wind pressure       date
+##     (chr) (int)    (int)     (date)
+## 1 Alberto   110     1007 2000-08-03
+## 2    Alex    45     1009 1998-07-27
+## 3 Allison    65     1005 1995-06-03
+## 4     Ana    40     1013 1997-06-30
+## 5  Arlene    50     1010 1999-06-11
+## 6  Arthur    45     1010 1996-06-17
+```
+
+```r
+select(storms, storm, pressure)
 ```
 
 ```
-## Downloading GitHub repo rstudio/EDAWR@master
-## from URL https://api.github.com/repos/rstudio/EDAWR/zipball/master
-```
-
-```
-## Installing EDAWR
-```
-
-```
-## Installing 17 packages: babynames, colorspace, dichromat, forecast, fracdiff, ggplot2, gtable, labeling, munsell, quadprog, RColorBrewer, RcppArmadillo, reshape2, scales, timeDate, tseries, zoo
-```
-
-```
-## Installing packages into 'C:/Users/Ruben/Documents/R/win-library/3.3'
-## (as 'lib' is unspecified)
-```
-
-```
-## package 'babynames' successfully unpacked and MD5 sums checked
-## package 'colorspace' successfully unpacked and MD5 sums checked
-## package 'dichromat' successfully unpacked and MD5 sums checked
-## package 'forecast' successfully unpacked and MD5 sums checked
-## package 'fracdiff' successfully unpacked and MD5 sums checked
-## package 'ggplot2' successfully unpacked and MD5 sums checked
-## package 'gtable' successfully unpacked and MD5 sums checked
-## package 'labeling' successfully unpacked and MD5 sums checked
-## package 'munsell' successfully unpacked and MD5 sums checked
-## package 'quadprog' successfully unpacked and MD5 sums checked
-## package 'RColorBrewer' successfully unpacked and MD5 sums checked
-## package 'RcppArmadillo' successfully unpacked and MD5 sums checked
-## package 'reshape2' successfully unpacked and MD5 sums checked
-## package 'scales' successfully unpacked and MD5 sums checked
-## package 'timeDate' successfully unpacked and MD5 sums checked
-## package 'tseries' successfully unpacked and MD5 sums checked
-## package 'zoo' successfully unpacked and MD5 sums checked
+## Source: local data frame [6 x 2]
 ## 
-## The downloaded binary packages are in
-## 	C:\Users\Ruben\AppData\Local\Temp\RtmpOAIc5F\downloaded_packages
+##     storm pressure
+##     (chr)    (int)
+## 1 Alberto     1007
+## 2    Alex     1009
+## 3 Allison     1005
+## 4     Ana     1013
+## 5  Arlene     1010
+## 6  Arthur     1010
+```
+
+Con el guión __-__ podemos excluir una columna:
+
+
+```r
+storms
 ```
 
 ```
-## "C:/PROGRA~1/R/R-33~1.0/bin/x64/R" --no-site-file --no-environ --no-save  \
-##   --no-restore --quiet CMD INSTALL  \
-##   "C:/Users/Ruben/AppData/Local/Temp/RtmpOAIc5F/devtools139c1f617d03/rstudio-EDAWR-2652ea6"  \
-##   --library="C:/Users/Ruben/Documents/R/win-library/3.3" --install-tests
-```
-
-```
+## Source: local data frame [6 x 4]
 ## 
-```
-
-Para importar el conjunto de datos del paquete __nycflights13__ en __R__:
-
-
-```r
-library(nycflights13) ##Cargamos la libreria
-```
-
-```
-## Error in library(nycflights13): there is no package called 'nycflights13'
+##     storm  wind pressure       date
+##     (chr) (int)    (int)     (date)
+## 1 Alberto   110     1007 2000-08-03
+## 2    Alex    45     1009 1998-07-27
+## 3 Allison    65     1005 1995-06-03
+## 4     Ana    40     1013 1997-06-30
+## 5  Arlene    50     1010 1999-06-11
+## 6  Arthur    45     1010 1996-06-17
 ```
 
 ```r
-data(package = "nycflights13") ##Importamos los datos en R
+select(storms, -storm)
 ```
 
 ```
-## Error in find.package(package, lib.loc, verbose = verbose): there is no package called 'nycflights13'
-```
-
-Si queremos trabajar con un conjunto de datos del paquete tendremos que cargarlo en el entorno __R__. Por ejemplo, si queremos trabajar con el data frame __planes__:
-
-
-```r
-data("planes")
-```
-
-```
-## Warning in data("planes"): data set 'planes' not found
-```
-A continuación podemos realizar un examen preliminar del data frame:
-
-
-```r
-str(planes) ##Muestra la estrutura del data frame
-```
-
-```
-## Classes 'tbl_df', 'tbl' and 'data.frame':	3322 obs. of  9 variables:
-##  $ tailnum     : chr  "N10156" "N102UW" "N103US" "N104UW" ...
-##  $ year        : int  2004 1998 1999 1999 2002 1999 1999 1999 1999 1999 ...
-##  $ type        : chr  "Fixed wing multi engine" "Fixed wing multi engine" "Fixed wing multi engine" "Fixed wing multi engine" ...
-##  $ manufacturer: chr  "EMBRAER" "AIRBUS INDUSTRIE" "AIRBUS INDUSTRIE" "AIRBUS INDUSTRIE" ...
-##  $ model       : chr  "EMB-145XR" "A320-214" "A320-214" "A320-214" ...
-##  $ engines     : int  2 2 2 2 2 2 2 2 2 2 ...
-##  $ seats       : int  55 182 182 182 55 182 182 182 182 182 ...
-##  $ speed       : int  NA NA NA NA NA NA NA NA NA NA ...
-##  $ engine      : chr  "Turbo-fan" "Turbo-fan" "Turbo-fan" "Turbo-fan" ...
-```
-
-```r
-dim(planes) ## n x m
-```
-
-```
-## [1] 3322    9
-```
-
-```r
-names(planes) ##nombre de las variables
-```
-
-```
-## [1] "tailnum"      "year"         "type"         "manufacturer"
-## [5] "model"        "engines"      "seats"        "speed"       
-## [9] "engine"
-```
-
-```r
-?planes ##documentación del data frame
-```
-
-```
-## Warning in read.dcf(file.path(p, "DESCRIPTION"), c("Package", "Version")):
-## cannot open compressed file 'C:/Users/Ruben/Documents/R/win-library/3.3/
-## devtools/DESCRIPTION', probable reason 'No such file or directory'
-```
-
-```
-## Warning in find.package(if (is.null(package)) loadedNamespaces() else
-## package, : there is no package called 'devtools'
-```
-
-```
-## No documentation for 'planes' in specified packages and libraries:
-## you could try '??planes'
-```
-
-La función ___select()___ sirve para seleccionar una o varias columnas del data frame.
-
-
-```r
-select(planes, tailnum, year,type)
-```
-
-```
-## Error in eval(expr, envir, enclos): could not find function "select"
+## Source: local data frame [6 x 3]
+## 
+##    wind pressure       date
+##   (int)    (int)     (date)
+## 1   110     1007 2000-08-03
+## 2    45     1009 1998-07-27
+## 3    65     1005 1995-06-03
+## 4    40     1013 1997-06-30
+## 5    50     1010 1999-06-11
+## 6    45     1010 1996-06-17
 ```
 
 Podemos utilizar la notación __:__ para seleccionar un rango de columnas:
 
 
 ```r
-select(planes, tailnum:type)
+storms
 ```
 
 ```
-## Error in eval(expr, envir, enclos): could not find function "select"
-```
-Podemos excluir una o varias columnas en nuestra selección del siguiente modo:
-
-
-```r
-select(planes, -tailnum)
-```
-
-```
-## Error in eval(expr, envir, enclos): could not find function "select"
-```
-
-```r
-select(planes, -(tailnum:type))
-```
-
-```
-## Error in eval(expr, envir, enclos): could not find function "select"
-```
-
-La función __select()__ nos permite seleccionar un conjunto de columnas/variables según un patrón con la siguiente sintaxis:
-
-
-```r
-select(planes, starts_with("m"))
-```
-
-```
-## Error in eval(expr, envir, enclos): could not find function "select"
+## Source: local data frame [6 x 4]
+## 
+##     storm  wind pressure       date
+##     (chr) (int)    (int)     (date)
+## 1 Alberto   110     1007 2000-08-03
+## 2    Alex    45     1009 1998-07-27
+## 3 Allison    65     1005 1995-06-03
+## 4     Ana    40     1013 1997-06-30
+## 5  Arlene    50     1010 1999-06-11
+## 6  Arthur    45     1010 1996-06-17
 ```
 
 ```r
-select(planes, ends_with("e"))
+select(storms, wind:date)
 ```
 
 ```
-## Error in eval(expr, envir, enclos): could not find function "select"
+## Source: local data frame [6 x 3]
+## 
+##    wind pressure       date
+##   (int)    (int)     (date)
+## 1   110     1007 2000-08-03
+## 2    45     1009 1998-07-27
+## 3    65     1005 1995-06-03
+## 4    40     1013 1997-06-30
+## 5    50     1010 1999-06-11
+## 6    45     1010 1996-06-17
 ```
 
-A continuación mostramos un conjunto de funciones para __select__ que nos serán muy útiles:
+Utilizando el operador __-__ y __:__ podemos hacer cosas como estas:
 
 
-+ __-__ : Selecciona todas las variables excepto
-+ __:__ : Selecciona un rango
-+ __contains()__ : Selecciona variables cuyo nombre contiene la cadena de texto
-+ __ends_with()__: Selecciona variables cuyo nombre termina con la cadena de caracteres
-+ __everything()__ : Selecciona todas las columnas
-+ __matches()__: Selecciona las variables cuyos nombres coinciden con una expresión regular
-+ __num_range()__: Selecciona las variables por posición
-+ __one_of()__: Selecciona variables cuyos nombres están en un grupo de nombres
-+ __start_with()__: Selecciona variables cuyos nombres empiezan con la cadena de caracteres.
+```r
+storms
+```
+
+```
+## Source: local data frame [6 x 4]
+## 
+##     storm  wind pressure       date
+##     (chr) (int)    (int)     (date)
+## 1 Alberto   110     1007 2000-08-03
+## 2    Alex    45     1009 1998-07-27
+## 3 Allison    65     1005 1995-06-03
+## 4     Ana    40     1013 1997-06-30
+## 5  Arlene    50     1010 1999-06-11
+## 6  Arthur    45     1010 1996-06-17
+```
+
+```r
+select(storms, -(storm:wind))
+```
+
+```
+## Source: local data frame [6 x 2]
+## 
+##   pressure       date
+##      (int)     (date)
+## 1     1007 2000-08-03
+## 2     1009 1998-07-27
+## 3     1005 1995-06-03
+## 4     1013 1997-06-30
+## 5     1010 1999-06-11
+## 6     1010 1996-06-17
+```
+
+El paquete dplyr proporciona una serie de funciones que nos pueden facilitar mucho nuestro trabajo, como por ejemplo:
+
+
+```r
+storms
+```
+
+```
+## Source: local data frame [6 x 4]
+## 
+##     storm  wind pressure       date
+##     (chr) (int)    (int)     (date)
+## 1 Alberto   110     1007 2000-08-03
+## 2    Alex    45     1009 1998-07-27
+## 3 Allison    65     1005 1995-06-03
+## 4     Ana    40     1013 1997-06-30
+## 5  Arlene    50     1010 1999-06-11
+## 6  Arthur    45     1010 1996-06-17
+```
+
+```r
+#Selecciona columnas cuyo nombre contiene un string
+select(storms,starts_with("w"))
+```
+
+```
+## Source: local data frame [6 x 1]
+## 
+##    wind
+##   (int)
+## 1   110
+## 2    45
+## 3    65
+## 4    40
+## 5    50
+## 6    45
+```
+
+
+```r
+#Selecciona columnas cuyo nombre termina con un string
+
+select(storms, ends_with("e"))
+```
+
+```
+## Source: local data frame [6 x 2]
+## 
+##   pressure       date
+##      (int)     (date)
+## 1     1007 2000-08-03
+## 2     1009 1998-07-27
+## 3     1005 1995-06-03
+## 4     1013 1997-06-30
+## 5     1010 1999-06-11
+## 6     1010 1996-06-17
+```
+
+
+```r
+#Selecciona todas las columnas
+
+select(storms, everything())
+```
+
+```
+## Source: local data frame [6 x 4]
+## 
+##     storm  wind pressure       date
+##     (chr) (int)    (int)     (date)
+## 1 Alberto   110     1007 2000-08-03
+## 2    Alex    45     1009 1998-07-27
+## 3 Allison    65     1005 1995-06-03
+## 4     Ana    40     1013 1997-06-30
+## 5  Arlene    50     1010 1999-06-11
+## 6  Arthur    45     1010 1996-06-17
+```
+
+
+```r
+#Selecciona columnas cuyo nombres contienen un string
+select(storms, contains("essure"))
+```
+
+```
+## Source: local data frame [6 x 1]
+## 
+##   pressure
+##      (int)
+## 1     1007
+## 2     1009
+## 3     1005
+## 4     1013
+## 5     1010
+## 6     1010
+```
+
+
+
+A continuación mostramos un resumen de las funciones para __select__ que nos serán muy útiles:
+
+
+|        | *A partir de la fila son funciones propias del paquete dply |
+| :---: | :---: |
+| __-__ | Selecciona todas las variables excepto|
+| __:__ | Selecciona un rango |
+| __contains()__ | Selecciona variables cuyo nombre contiene la cadena de texto |
+| __ends_with()__ | Selecciona variables cuyo nombre termina con la cadena de caracteres |
+| __everything()__ | Selecciona todas las columnas |
+| __matches()__ | Selecciona las variables cuyos nombres coinciden con una expresión regular |
+| __num_range()__ | Selecciona las variables por posición |
+| __one_of()__ | Selecciona variables cuyos nombres están en un grupo de nombres |
+| __start_with()__ | Selecciona variables cuyos nombres empiezan con la cadena de caracteres |
 
 
 
