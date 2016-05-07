@@ -41,6 +41,8 @@ Con la función select podemos seleccionar columnas de un data frame:
 
 ![](select.PNG)  
 
+Visualizamos el contenido del data frame __storms__:
+
 
 
 ```r
@@ -59,6 +61,9 @@ storms
 ## 5  Arlene    50     1010 1999-06-11
 ## 6  Arthur    45     1010 1996-06-17
 ```
+
+Para seleccionar las variables __storm__ y __pressure__ del data frame ejecutaremos la siguiente instrucción:  
+
 
 ```r
 select(storms, storm, pressure)
@@ -128,7 +133,7 @@ select(storms, wind:date)
 ```
 
 
-Utilizando el operador de forma conjunta __-__ y __:__ podemos hacer cosas como estas:  
+Utilizando los operadores __-__ y __:__ de forma conjunta  podemos hacer cosas como estas:  
 
 
 

@@ -3,7 +3,9 @@
 
 La función __group_by()__  agrupa un conjunto de filas seleccionado en un conjunto de filas de resumen de acuerdo con los valores de una o más columnas o expresiones.
 
-![](groupby.PNG)
+![](groupby.PNG)  
+
+Echemos un vistazo al data frame __pollution__:
 
 
 ```r
@@ -19,6 +21,9 @@ La función __group_by()__  agrupa un conjunto de filas seleccionado en un conju
 5  Beijing large    121
 6  Beijing small     56
 ```
+
+Agrupemos las observaciones por la variable city:  
+
 
 ```r
 > group_by(pollution, city)
@@ -37,10 +42,15 @@ Groups: city [3]
 5  Beijing large    121
 6  Beijing small     56
 ```
+  
+  
 
-La función __group_by()__ es extremadamente útil trabajando en conjunción con la función __summarise()__:
 
-![](groupbySummarise.PNG)
+La función __group_by()__ es extremadamente útil trabajando en conjunción con la función __summarise()__:  
+
+
+![](groupbySummarise.PNG)  
+
 
 
 ```r

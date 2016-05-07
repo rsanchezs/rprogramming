@@ -18,7 +18,6 @@ La función __filter__ nos permite filtrar filas según una condición:
 
 ```{r}
 library(EDAWR)
-storms
 filter(storms, wind >= 50)
 
 ```  

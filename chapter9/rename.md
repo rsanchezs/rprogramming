@@ -3,6 +3,8 @@
 
 Renombrar una variable en un data frame es sorprendentemente en __R__ muy difícil de realizar. La función __rename()__ esta diseñada para hacer este proceso de una forma más fácil.  
 
+Echemos un vistazo a los nombres de las variables en el data frame __storms__:
+
 
 ```r
 > names(storms)
@@ -11,6 +13,9 @@ Renombrar una variable en un data frame es sorprendentemente en __R__ muy difíc
 ```
 [1] "storm"    "wind"     "pressure" "date"    
 ```
+
+Para cambiar los nombres de las variables en el data frame __storms__ a castellano, podriamos hacerlo de la forma siguiente:  
+
 
 ```r
 > rename(storms, tormenta = storm, viento = wind, presion = pressure, fecha = date )
@@ -28,4 +33,5 @@ Source: local data frame [6 x 4]
 5   Arlene     50    1010 1999-06-11
 6   Arthur     45    1010 1996-06-17
 ```
+
 

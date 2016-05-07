@@ -7,6 +7,8 @@ Con la función __mutate()__ podemos computar tranformaciones de variables en un
 Así por ejemplo si deseamos calcular el ratio entre _pressure_ y _wind_:  
 ![](mutate.PNG)  
 
+Echemos un vistazo al data frame __storms__:
+
 
 
 ```r
@@ -25,6 +27,9 @@ Source: local data frame [6 x 4]
 5  Arlene    50     1010 1999-06-11
 6  Arthur    45     1010 1996-06-17
 ```
+
+A continuación podemos crear una nueva varible __ratio__ con el ratio entre la presión y el viento:  
+
 
 ```r
 > mutate(storms, ratio = pressure/wind)

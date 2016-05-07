@@ -16,16 +16,24 @@ Por defecto __arrange()__ ordena las filas por orden ascendente:
 
 ![](arrange.PNG)  
 
+Echemos un vistazo al data frame __arrange__:
+
 
 ```{r}
 library(EDAWR)
 library(dplyr)
 storms
-arrange(storms, wind)
+)
 
 ```  
 
-  
+Para ordenar las filas por la variable __wind__ de forma ascendente podemos hacer lo siguiente:  
+
+```{r}
+arrange(storms, wind
+
+```
+
   
 Si las queremos ordenar de forma ascendente lo haremos del siguiente modo:  
 

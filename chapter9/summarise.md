@@ -11,6 +11,7 @@ Así por ejemplo, ara calcular la mediana y la varianza de la variable _amount_ 
 
 ![](summarise.PNG)  
 
+Echemos un vistazo al data frame __pollution__:  
 
 
 ```r
@@ -27,6 +28,9 @@ pollution
 ## 6  Beijing small     56
 ```
 
+Para obtener un resumen con la mediana y la varianza de la variable __amount__ podemos hacer lo siguiente:  
+
+
 ```r
 summarise(pollution, mediana = median(amount), variance = var(amount))
 ```
@@ -37,7 +41,8 @@ summarise(pollution, mediana = median(amount), variance = var(amount))
 ```
 
 
-Podemos utilizar el operador %>%, obsérvese que es lo mismo:  
+
+Podemos utilizar el operador %>%, 
 
 ![](summarise1.PNG)  
 
@@ -52,6 +57,7 @@ pollution %>% summarise(mediana = median(amount), variance = var(amount))
 ## 1    22.5   1731.6
 ```
 
+Obsérvese que las dos formas de hacerlo devuelven el mismo resultado.  
 
 
 

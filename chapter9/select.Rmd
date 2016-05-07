@@ -40,11 +40,18 @@ Con la función select podemos seleccionar columnas de un data frame:
 
 ![](select.PNG)  
 
+Visualizamos el contenido del data frame __storms__:
+
 
 ```{r}
 storms
-select(storms, storm, pressure)
 
+```  
+
+Para seleccionar las variables __storm__ y __pressure__ del data frame ejecutaremos la siguiente instrucción:  
+
+```{r}
+select(storms, storm, pressure)
 ```  
 
 
