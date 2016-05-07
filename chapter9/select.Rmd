@@ -73,7 +73,7 @@ select(storms, wind:date)
 ```  
 
 
-Utilizando el operador de forma conjunta __-__ y __:__ podemos hacer cosas como estas:  
+Utilizando los operadores __-__ y __:__ de forma conjunta  podemos hacer cosas como estas:  
 
 
 ```{r}

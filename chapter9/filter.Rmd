@@ -56,13 +56,13 @@ Las condiciones pueden ser expresiones logicas construidas mediante los operador
 | is.na | Es NA |
 | !is.na | No es NA |  
 
-
+---
 
 
 |      | ?base::Logic |
 | :---: | :---: |
 | & | boolean and |
-| \| | boolean or |
+| ``|`` | boolean or |
 | xor | or inclusivo |
 | ! | not |
 | any | cualquiera true |
@@ -75,7 +75,7 @@ Así por ejemplo, el siguiente ejemplo filtra aquellas filas con un __wind >= 50
 
 
 ```{r}
-storms
+
 filter(storms, wind>=50 & pressure<1010)
 
 ```  
