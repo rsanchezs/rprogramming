@@ -119,7 +119,7 @@ This is the summary of my book.
    * [rename()](chapter9/rename.md)
    * [mutate()](chapter9/mutate.md)
    * [group_by()](chapter9/groupby.md)
-   * [%>%](chapter9/foo.md)
+   * [%>%](chapter9/pipeline.md)
 * [Estructuras de control](chapter10/README.md)
    * [if-else](chapter10/ifelse.md)
    * [Iteraciones con for](chapter10/forloop.md)
