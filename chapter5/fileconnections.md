@@ -10,7 +10,7 @@ Las conexiones con archivos de texto pueden ser creadas con la función _file()_
 
 ```
 function (description = "", open = "", blocking = TRUE, encoding = getOption("encoding"), 
-    raw = FALSE)  
+    raw = FALSE, method = getOption("url.method", "default"))  
 ```
 
 La función _file()_ tiene una serie de argumentos que son comunes a la mayoría de las demás funciones de conexión.

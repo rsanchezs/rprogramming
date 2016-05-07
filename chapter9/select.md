@@ -5,15 +5,74 @@ Para los ejemplos en este capítulo utilizaremos un conjunto de datos relacionad
 
 
 ```
-## Installing package into 'C:/Users/Drube/Documents/R/win-library/3.2'
+## Installing package into 'C:/Users/Ruben/Documents/R/win-library/3.3'
 ## (as 'lib' is unspecified)
 ```
 
 ```
-## package 'nycflights13' successfully unpacked and MD5 sums checked
+## package 'devtools' successfully unpacked and MD5 sums checked
+```
+
+```
+## Warning: cannot remove prior installation of package 'devtools'
+```
+
+```
 ## 
 ## The downloaded binary packages are in
-## 	C:\Users\Drube\AppData\Local\Temp\RtmpiIDeHi\downloaded_packages
+## 	C:\Users\Ruben\AppData\Local\Temp\RtmpOAIc5F\downloaded_packages
+```
+
+```
+## Downloading GitHub repo rstudio/EDAWR@master
+## from URL https://api.github.com/repos/rstudio/EDAWR/zipball/master
+```
+
+```
+## Installing EDAWR
+```
+
+```
+## Installing 17 packages: babynames, colorspace, dichromat, forecast, fracdiff, ggplot2, gtable, labeling, munsell, quadprog, RColorBrewer, RcppArmadillo, reshape2, scales, timeDate, tseries, zoo
+```
+
+```
+## Installing packages into 'C:/Users/Ruben/Documents/R/win-library/3.3'
+## (as 'lib' is unspecified)
+```
+
+```
+## package 'babynames' successfully unpacked and MD5 sums checked
+## package 'colorspace' successfully unpacked and MD5 sums checked
+## package 'dichromat' successfully unpacked and MD5 sums checked
+## package 'forecast' successfully unpacked and MD5 sums checked
+## package 'fracdiff' successfully unpacked and MD5 sums checked
+## package 'ggplot2' successfully unpacked and MD5 sums checked
+## package 'gtable' successfully unpacked and MD5 sums checked
+## package 'labeling' successfully unpacked and MD5 sums checked
+## package 'munsell' successfully unpacked and MD5 sums checked
+## package 'quadprog' successfully unpacked and MD5 sums checked
+## package 'RColorBrewer' successfully unpacked and MD5 sums checked
+## package 'RcppArmadillo' successfully unpacked and MD5 sums checked
+## package 'reshape2' successfully unpacked and MD5 sums checked
+## package 'scales' successfully unpacked and MD5 sums checked
+## package 'timeDate' successfully unpacked and MD5 sums checked
+## package 'tseries' successfully unpacked and MD5 sums checked
+## package 'zoo' successfully unpacked and MD5 sums checked
+## 
+## The downloaded binary packages are in
+## 	C:\Users\Ruben\AppData\Local\Temp\RtmpOAIc5F\downloaded_packages
+```
+
+```
+## "C:/PROGRA~1/R/R-33~1.0/bin/x64/R" --no-site-file --no-environ --no-save  \
+##   --no-restore --quiet CMD INSTALL  \
+##   "C:/Users/Ruben/AppData/Local/Temp/RtmpOAIc5F/devtools139c1f617d03/rstudio-EDAWR-2652ea6"  \
+##   --library="C:/Users/Ruben/Documents/R/win-library/3.3" --install-tests
+```
+
+```
+## 
 ```
 
 Para importar el conjunto de datos del paquete __nycflights13__ en __R__:
@@ -24,18 +83,15 @@ library(nycflights13) ##Cargamos la libreria
 ```
 
 ```
-## 
-## Attaching package: 'nycflights13'
-```
-
-```
-## The following objects are masked _by_ '.GlobalEnv':
-## 
-##     airlines, weather
+## Error in library(nycflights13): there is no package called 'nycflights13'
 ```
 
 ```r
 data(package = "nycflights13") ##Importamos los datos en R
+```
+
+```
+## Error in find.package(package, lib.loc, verbose = verbose): there is no package called 'nycflights13'
 ```
 
 Si queremos trabajar con un conjunto de datos del paquete tendremos que cargarlo en el entorno __R__. Por ejemplo, si queremos trabajar con el data frame __planes__:
@@ -43,6 +99,10 @@ Si queremos trabajar con un conjunto de datos del paquete tendremos que cargarlo
 
 ```r
 data("planes")
+```
+
+```
+## Warning in data("planes"): data set 'planes' not found
 ```
 A continuación podemos realizar un examen preliminar del data frame:
 
@@ -86,6 +146,22 @@ names(planes) ##nombre de las variables
 ?planes ##documentación del data frame
 ```
 
+```
+## Warning in read.dcf(file.path(p, "DESCRIPTION"), c("Package", "Version")):
+## cannot open compressed file 'C:/Users/Ruben/Documents/R/win-library/3.3/
+## devtools/DESCRIPTION', probable reason 'No such file or directory'
+```
+
+```
+## Warning in find.package(if (is.null(package)) loadedNamespaces() else
+## package, : there is no package called 'devtools'
+```
+
+```
+## No documentation for 'planes' in specified packages and libraries:
+## you could try '??planes'
+```
+
 La función ___select()___ sirve para seleccionar una o varias columnas del data frame.
 
 
@@ -94,21 +170,7 @@ select(planes, tailnum, year,type)
 ```
 
 ```
-## Source: local data frame [3,322 x 3]
-## 
-##    tailnum  year                    type
-##      (chr) (int)                   (chr)
-## 1   N10156  2004 Fixed wing multi engine
-## 2   N102UW  1998 Fixed wing multi engine
-## 3   N103US  1999 Fixed wing multi engine
-## 4   N104UW  1999 Fixed wing multi engine
-## 5   N10575  2002 Fixed wing multi engine
-## 6   N105UW  1999 Fixed wing multi engine
-## 7   N107US  1999 Fixed wing multi engine
-## 8   N108UW  1999 Fixed wing multi engine
-## 9   N109UW  1999 Fixed wing multi engine
-## 10  N110UW  1999 Fixed wing multi engine
-## ..     ...   ...                     ...
+## Error in eval(expr, envir, enclos): could not find function "select"
 ```
 
 Podemos utilizar la notación __:__ para seleccionar un rango de columnas:
@@ -119,21 +181,7 @@ select(planes, tailnum:type)
 ```
 
 ```
-## Source: local data frame [3,322 x 3]
-## 
-##    tailnum  year                    type
-##      (chr) (int)                   (chr)
-## 1   N10156  2004 Fixed wing multi engine
-## 2   N102UW  1998 Fixed wing multi engine
-## 3   N103US  1999 Fixed wing multi engine
-## 4   N104UW  1999 Fixed wing multi engine
-## 5   N10575  2002 Fixed wing multi engine
-## 6   N105UW  1999 Fixed wing multi engine
-## 7   N107US  1999 Fixed wing multi engine
-## 8   N108UW  1999 Fixed wing multi engine
-## 9   N109UW  1999 Fixed wing multi engine
-## 10  N110UW  1999 Fixed wing multi engine
-## ..     ...   ...                     ...
+## Error in eval(expr, envir, enclos): could not find function "select"
 ```
 Podemos excluir una o varias columnas en nuestra selección del siguiente modo:
 
@@ -143,22 +191,7 @@ select(planes, -tailnum)
 ```
 
 ```
-## Source: local data frame [3,322 x 8]
-## 
-##     year                    type     manufacturer     model engines seats
-##    (int)                   (chr)            (chr)     (chr)   (int) (int)
-## 1   2004 Fixed wing multi engine          EMBRAER EMB-145XR       2    55
-## 2   1998 Fixed wing multi engine AIRBUS INDUSTRIE  A320-214       2   182
-## 3   1999 Fixed wing multi engine AIRBUS INDUSTRIE  A320-214       2   182
-## 4   1999 Fixed wing multi engine AIRBUS INDUSTRIE  A320-214       2   182
-## 5   2002 Fixed wing multi engine          EMBRAER EMB-145LR       2    55
-## 6   1999 Fixed wing multi engine AIRBUS INDUSTRIE  A320-214       2   182
-## 7   1999 Fixed wing multi engine AIRBUS INDUSTRIE  A320-214       2   182
-## 8   1999 Fixed wing multi engine AIRBUS INDUSTRIE  A320-214       2   182
-## 9   1999 Fixed wing multi engine AIRBUS INDUSTRIE  A320-214       2   182
-## 10  1999 Fixed wing multi engine AIRBUS INDUSTRIE  A320-214       2   182
-## ..   ...                     ...              ...       ...     ...   ...
-## Variables not shown: speed (int), engine (chr)
+## Error in eval(expr, envir, enclos): could not find function "select"
 ```
 
 ```r
@@ -166,21 +199,7 @@ select(planes, -(tailnum:type))
 ```
 
 ```
-## Source: local data frame [3,322 x 6]
-## 
-##        manufacturer     model engines seats speed    engine
-##               (chr)     (chr)   (int) (int) (int)     (chr)
-## 1           EMBRAER EMB-145XR       2    55    NA Turbo-fan
-## 2  AIRBUS INDUSTRIE  A320-214       2   182    NA Turbo-fan
-## 3  AIRBUS INDUSTRIE  A320-214       2   182    NA Turbo-fan
-## 4  AIRBUS INDUSTRIE  A320-214       2   182    NA Turbo-fan
-## 5           EMBRAER EMB-145LR       2    55    NA Turbo-fan
-## 6  AIRBUS INDUSTRIE  A320-214       2   182    NA Turbo-fan
-## 7  AIRBUS INDUSTRIE  A320-214       2   182    NA Turbo-fan
-## 8  AIRBUS INDUSTRIE  A320-214       2   182    NA Turbo-fan
-## 9  AIRBUS INDUSTRIE  A320-214       2   182    NA Turbo-fan
-## 10 AIRBUS INDUSTRIE  A320-214       2   182    NA Turbo-fan
-## ..              ...       ...     ...   ...   ...       ...
+## Error in eval(expr, envir, enclos): could not find function "select"
 ```
 
 La función __select()__ nos permite seleccionar un conjunto de columnas/variables según un patrón con la siguiente sintaxis:
@@ -191,21 +210,7 @@ select(planes, starts_with("m"))
 ```
 
 ```
-## Source: local data frame [3,322 x 2]
-## 
-##        manufacturer     model
-##               (chr)     (chr)
-## 1           EMBRAER EMB-145XR
-## 2  AIRBUS INDUSTRIE  A320-214
-## 3  AIRBUS INDUSTRIE  A320-214
-## 4  AIRBUS INDUSTRIE  A320-214
-## 5           EMBRAER EMB-145LR
-## 6  AIRBUS INDUSTRIE  A320-214
-## 7  AIRBUS INDUSTRIE  A320-214
-## 8  AIRBUS INDUSTRIE  A320-214
-## 9  AIRBUS INDUSTRIE  A320-214
-## 10 AIRBUS INDUSTRIE  A320-214
-## ..              ...       ...
+## Error in eval(expr, envir, enclos): could not find function "select"
 ```
 
 ```r
@@ -213,21 +218,7 @@ select(planes, ends_with("e"))
 ```
 
 ```
-## Source: local data frame [3,322 x 2]
-## 
-##                       type    engine
-##                      (chr)     (chr)
-## 1  Fixed wing multi engine Turbo-fan
-## 2  Fixed wing multi engine Turbo-fan
-## 3  Fixed wing multi engine Turbo-fan
-## 4  Fixed wing multi engine Turbo-fan
-## 5  Fixed wing multi engine Turbo-fan
-## 6  Fixed wing multi engine Turbo-fan
-## 7  Fixed wing multi engine Turbo-fan
-## 8  Fixed wing multi engine Turbo-fan
-## 9  Fixed wing multi engine Turbo-fan
-## 10 Fixed wing multi engine Turbo-fan
-## ..                     ...       ...
+## Error in eval(expr, envir, enclos): could not find function "select"
 ```
 
 A continuación mostramos un conjunto de funciones para __select__ que nos serán muy útiles:

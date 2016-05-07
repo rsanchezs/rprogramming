@@ -50,20 +50,7 @@ library(dplyr)
 ```
 
 ```
-## 
-## Attaching package: 'dplyr'
-```
-
-```
-## The following objects are masked from 'package:stats':
-## 
-##     filter, lag
-```
-
-```
-## The following objects are masked from 'package:base':
-## 
-##     intersect, setdiff, setequal, union
+## Error in library(dplyr): there is no package called 'dplyr'
 ```
 
 
