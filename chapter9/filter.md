@@ -65,7 +65,7 @@ Las condiciones pueden ser expresiones logicas construidas mediante los operador
 | is.na | Es NA |
 | !is.na | No es NA |  
 
----
+
 
 
 |      | ?base::Logic |
