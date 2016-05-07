@@ -20,7 +20,7 @@ pollution
 
 ```  
 
-Agrupemos las observaciones por la variable city:  
+Agrupemos las observaciones por la variable __city__:  
 
 ```{r}
 group_by(pollution, city)

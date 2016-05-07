@@ -20,10 +20,9 @@ Echemos un vistazo al data frame __arrange__:
 
 
 ```{r}
-library(EDAWR)
-library(dplyr)
+
 storms
-)
+
 
 ```  
 
