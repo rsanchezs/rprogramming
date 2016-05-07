@@ -8,3 +8,45 @@ opts_chunk$set(prompt=TRUE, comment='', results='markup')
 # end setup chunk
 ```
 # arrange()
+
+La función __arrange()__ se utiliza para ordenar las filas de un data frame de acuerdo a una o varias columnas/variables.  
+
+
+Por defecto __arrange()__ ordena las filas por orden ascendente:  
+
+![](arrange.PNG)  
+
+
+```{r}
+library(EDAWR)
+library(dplyr)
+storms
+arrange(storms, wind)
+
+```  
+
+  
+  
+Si las queremos ordenar de forma ascendente lo haremos del siguiente modo:  
+
+![](arrange1.PNG)  
+
+
+```{r}
+arrange(storms, desc(wind))
+
+```  
+
+
+Podemos ordenar las filas según varias variables:  
+
+![](arrange2.PNG)  
+
+
+
+```{r}
+storms
+arrange(storms, wind, date)
+
+```
+

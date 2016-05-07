@@ -1,19 +1,46 @@
 
 # select()
 
-Lo primero sera instalar el paquete con el conjunto de datos que utilizaremos para los ejemplos:
+Lo primero sera instalar el paquete con el conjunto de datos que utilizaremos para los ejemplos:  
 
 
 
-Tendremos que cargar la libreria para poder utilizarla:
+```r
+install.packages("devtools")
+devtools::install_github("rstudio/EDAWR")
+```
+
+
+Tendremos que cargar la libreria para poder utilizarla:  
 
 
 
-Podemos echar un vistazo al conjunto de datos mediante __?__ or el comando __Viem()__:
+```r
+library(EDAWR)
+```
+
+
+Podemos echar un vistazo al conjunto de datos mediante __?__ or el comando __Viem()__:  
 
 
 
-Con la función select podemos seleccionar columnas de un data frame:
+```r
+?storms
+?cases
+?pollution
+?tb
+View(storms)
+View(cases)
+View(pollution)
+View(tb)
+```
+
+
+Con la función select podemos seleccionar columnas de un data frame:  
+
+
+![](select.PNG)  
+
 
 
 ```r
@@ -50,25 +77,13 @@ select(storms, storm, pressure)
 ## 6  Arthur     1010
 ```
 
-Con el guión __-__ podemos excluir una columna:
+
+Con el guión __-__ podemos excluir una columna:  
 
 
-```r
-storms
-```
+![](select1.PNG)  
 
-```
-## Source: local data frame [6 x 4]
-## 
-##     storm  wind pressure       date
-##     (chr) (int)    (int)     (date)
-## 1 Alberto   110     1007 2000-08-03
-## 2    Alex    45     1009 1998-07-27
-## 3 Allison    65     1005 1995-06-03
-## 4     Ana    40     1013 1997-06-30
-## 5  Arlene    50     1010 1999-06-11
-## 6  Arthur    45     1010 1996-06-17
-```
+
 
 ```r
 select(storms, -storm)
@@ -87,25 +102,13 @@ select(storms, -storm)
 ## 6    45     1010 1996-06-17
 ```
 
-Podemos utilizar la notación __:__ para seleccionar un rango de columnas:
+
+Podemos utilizar la notación __:__ para seleccionar un rango de columnas:  
 
 
-```r
-storms
-```
+![](select2.PNG)  
 
-```
-## Source: local data frame [6 x 4]
-## 
-##     storm  wind pressure       date
-##     (chr) (int)    (int)     (date)
-## 1 Alberto   110     1007 2000-08-03
-## 2    Alex    45     1009 1998-07-27
-## 3 Allison    65     1005 1995-06-03
-## 4     Ana    40     1013 1997-06-30
-## 5  Arlene    50     1010 1999-06-11
-## 6  Arthur    45     1010 1996-06-17
-```
+
 
 ```r
 select(storms, wind:date)
@@ -124,25 +127,10 @@ select(storms, wind:date)
 ## 6    45     1010 1996-06-17
 ```
 
-Utilizando el operador __-__ y __:__ podemos hacer cosas como estas:
+
+Utilizando el operador de forma conjunta __-__ y __:__ podemos hacer cosas como estas:  
 
 
-```r
-storms
-```
-
-```
-## Source: local data frame [6 x 4]
-## 
-##     storm  wind pressure       date
-##     (chr) (int)    (int)     (date)
-## 1 Alberto   110     1007 2000-08-03
-## 2    Alex    45     1009 1998-07-27
-## 3 Allison    65     1005 1995-06-03
-## 4     Ana    40     1013 1997-06-30
-## 5  Arlene    50     1010 1999-06-11
-## 6  Arthur    45     1010 1996-06-17
-```
 
 ```r
 select(storms, -(storm:wind))
@@ -161,25 +149,10 @@ select(storms, -(storm:wind))
 ## 6     1010 1996-06-17
 ```
 
-El paquete dplyr proporciona una serie de funciones que nos pueden facilitar mucho nuestro trabajo, como por ejemplo:
+
+El paquete dplyr proporciona una serie de funciones que nos pueden facilitar mucho nuestro trabajo, como por ejemplo:  
 
 
-```r
-storms
-```
-
-```
-## Source: local data frame [6 x 4]
-## 
-##     storm  wind pressure       date
-##     (chr) (int)    (int)     (date)
-## 1 Alberto   110     1007 2000-08-03
-## 2    Alex    45     1009 1998-07-27
-## 3 Allison    65     1005 1995-06-03
-## 4     Ana    40     1013 1997-06-30
-## 5  Arlene    50     1010 1999-06-11
-## 6  Arthur    45     1010 1996-06-17
-```
 
 ```r
 #Selecciona columnas cuyo nombre contiene un string
@@ -200,9 +173,9 @@ select(storms,starts_with("w"))
 ```
 
 
+
 ```r
 #Selecciona columnas cuyo nombre termina con un string
-
 select(storms, ends_with("e"))
 ```
 
@@ -220,9 +193,9 @@ select(storms, ends_with("e"))
 ```
 
 
+
 ```r
 #Selecciona todas las columnas
-
 select(storms, everything())
 ```
 
@@ -238,6 +211,7 @@ select(storms, everything())
 ## 5  Arlene    50     1010 1999-06-11
 ## 6  Arthur    45     1010 1996-06-17
 ```
+
 
 
 ```r
@@ -260,10 +234,12 @@ select(storms, contains("essure"))
 
 
 
-A continuación mostramos un resumen de las funciones para __select__ que nos serán muy útiles:
+
+A continuación mostramos un resumen de las funciones para __select__ que nos serán muy útiles:  
 
 
-|        | *A partir de la fila son funciones propias del paquete dply |
+
+|        | *A partir de la tercera fila son funciones propias del paquete dply |
 | :---: | :---: |
 | __-__ | Selecciona todas las variables excepto|
 | __:__ | Selecciona un rango |

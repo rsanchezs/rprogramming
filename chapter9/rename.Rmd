@@ -8,3 +8,12 @@ opts_chunk$set(prompt=TRUE, comment='', results='markup')
 # end setup chunk
 ```
 # rename()
+
+Renombrar una variable en un data frame es sorprendentemente en __R__ muy difícil de realizar. La función __rename()__ esta diseñada para hacer este proceso de una forma más fácil.  
+
+```{r}
+names(storms)
+rename(storms, tormenta = storm, viento = wind, presion = pressure, fecha = date )
+
+```
+

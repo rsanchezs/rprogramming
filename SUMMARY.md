@@ -115,6 +115,7 @@ This is the summary of my book.
    * [select()](chapter9/select.md)
    * [filter()](chapter9/filter.md)
    * [arrange()](chapter9/arrange.md)
+   * [pipeline()](chapter9/pipeline.md)
    * [rename()](chapter9/rename.md)
    * [mutate()](chapter9/mutate.md)
    * [group_by()](chapter9/groupby.md)

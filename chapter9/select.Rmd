@@ -1,24 +1,29 @@
 
 # select()
 
-Lo primero sera instalar el paquete con el conjunto de datos que utilizaremos para los ejemplos:
+Lo primero sera instalar el paquete con el conjunto de datos que utilizaremos para los ejemplos:  
 
-```{r eval=FALSE, echo=FALSE}
+
+```{r eval=FALSE}
 install.packages("devtools")
 devtools::install_github("rstudio/EDAWR")
 
-```
+```  
 
-Tendremos que cargar la libreria para poder utilizarla:
 
-```{r echo=FALSE}
+Tendremos que cargar la libreria para poder utilizarla:  
+
+
+```{r eval=FALSE}
 library(EDAWR)
 
-```
+```  
 
-Podemos echar un vistazo al conjunto de datos mediante __?__ or el comando __Viem()__:
 
-```{r echo=FALSE, eval=FALSE}
+Podemos echar un vistazo al conjunto de datos mediante __?__ or el comando __Viem()__:  
+
+
+```{r eval=FALSE}
 ?storms
 ?cases
 ?pollution
@@ -27,72 +32,91 @@ View(storms)
 View(cases)
 View(pollution)
 View(tb)
-```
+```  
 
-Con la función select podemos seleccionar columnas de un data frame:
+
+Con la función select podemos seleccionar columnas de un data frame:  
+
+
+![](select.PNG)  
+
 
 ```{r}
 storms
 select(storms, storm, pressure)
 
-```
+```  
 
-Con el guión __-__ podemos excluir una columna:
+
+Con el guión __-__ podemos excluir una columna:  
+
+
+![](select1.PNG)  
+
 
 ```{r}
-storms
+
 select(storms, -storm)
 
-```
+```  
 
-Podemos utilizar la notación __:__ para seleccionar un rango de columnas:
+
+Podemos utilizar la notación __:__ para seleccionar un rango de columnas:  
+
+
+![](select2.PNG)  
+
 
 ```{r}
-storms
 select(storms, wind:date)
 
-```
+```  
 
-Utilizando el operador __-__ y __:__ podemos hacer cosas como estas:
+
+Utilizando el operador de forma conjunta __-__ y __:__ podemos hacer cosas como estas:  
+
 
 ```{r}
-storms
 select(storms, -(storm:wind))
 
-```
+```  
 
-El paquete dplyr proporciona una serie de funciones que nos pueden facilitar mucho nuestro trabajo, como por ejemplo:
+
+El paquete dplyr proporciona una serie de funciones que nos pueden facilitar mucho nuestro trabajo, como por ejemplo:  
+
 
 ```{r}
-storms
 #Selecciona columnas cuyo nombre contiene un string
 select(storms,starts_with("w"))
-```
+```  
+
 
 ```{r}
 #Selecciona columnas cuyo nombre termina con un string
-
 select(storms, ends_with("e"))
-```
+```  
+
 
 ```{r}
 #Selecciona todas las columnas
-
 select(storms, everything())
-```
+```  
+
 
 ```{r}
 #Selecciona columnas cuyo nombres contienen un string
 select(storms, contains("essure"))
 
-```
+```  
 
 
 
-A continuación mostramos un resumen de las funciones para __select__ que nos serán muy útiles:
+
+A continuación mostramos un resumen de las funciones para __select__ que nos serán muy útiles:  
 
 
-|        | *A partir de la fila son funciones propias del paquete dply |
+
+|        | *A partir de la tercera fila son funciones propias del paquete dply |
 | :---: | :---: |
 | __-__ | Selecciona todas las variables excepto|
 | __:__ | Selecciona un rango |
