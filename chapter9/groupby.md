@@ -22,7 +22,7 @@ Echemos un vistazo al data frame __pollution__:
 6  Beijing small     56
 ```
 
-Agrupemos las observaciones por la variable city:  
+Agrupemos las observaciones por la variable __city__:  
 
 
 ```r

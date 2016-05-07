@@ -10,21 +10,6 @@ La función __filter__ nos permite filtrar filas según una condición:
 
 
 ```r
-> library(EDAWR)
-```
-
-```
-
-Attaching package: 'EDAWR'
-```
-
-```
-The following object is masked _by_ '.GlobalEnv':
-
-    y
-```
-
-```r
 > filter(storms, wind >= 50)
 ```
 
@@ -86,7 +71,7 @@ Las condiciones pueden ser expresiones logicas construidas mediante los operador
 |      | ?base::Logic |
 | :---: | :---: |
 | & | boolean and |
-| ``|`` | boolean or |
+| \| | boolean o |
 | xor | or inclusivo |
 | ! | not |
 | any | cualquiera true |

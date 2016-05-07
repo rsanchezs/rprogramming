@@ -2,7 +2,7 @@
 
 
 
-## R Summarise
+##  Summarise
 
 La función __summarise()__ funciona de forma análoga a la función [mutate](mutate.md), excepto que en lugar de añadir nuevas columnas crea un nuevo data frame.  
 
@@ -75,7 +75,7 @@ A continuación se muestran funciones que trabajando conjuntamente con la funci�
 | var, sd()  | varianza y desviación típica |  
 
 
-  
+---
   
 
 |      | dplyr |
