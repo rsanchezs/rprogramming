@@ -55,6 +55,14 @@ Es posible que cuando carguemos el paquete nos aparezcan una serie de _warnings_
 Recomiendamos consultar la documentación de las funciones:
 
 
+```r
+?select
+?filter
+?arrange
+?mutate
+?summarise
+?group_by
+```
 
 
 
