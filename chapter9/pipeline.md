@@ -1,7 +1,6 @@
 
 
 
-
 ## El operador pipe %>%
 
 El operador pipeline __%>%__ es útil para concatenar múltiples _dplyr_ operaciones. Obsérvese en el siguiente ejemplo, que cada vez que queremos aplicar mas de una función, la instrucción es una secuencia de llamadas a funciones de forma anidada y que resulta ilegible:  
@@ -33,8 +32,6 @@ Obsérvese que las siguientes instrucciones,
 
 
 ```r
-library(dplyr)
-library(EDAWR)
 select(storms, storm, pressure)
 ```
 

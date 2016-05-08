@@ -1,8 +1,5 @@
 
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
 ## El operador pipe %>%
 
@@ -33,8 +30,7 @@ Obsérvese que las siguientes instrucciones,
 
 
 ```{r}
-library(dplyr)
-library(EDAWR)
+
 select(storms, storm, pressure)
 filter(storms, wind >= 50)
 
