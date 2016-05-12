@@ -1,4 +1,7 @@
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
 # El paquete dplyr
 
 El paquete __dplyr__ fue desarrollado por Hadley Wickham de RStudio y es un versión optimizada de su paquete __plyr__. El paquete __dplyr__ no proporciona ninguna nueva funcionalidad a __R__ per se, en el sentido que todo aquello que podemos hacer con __dplyr__ lo podríamos hacer con la sintaxis básica de __R__.
